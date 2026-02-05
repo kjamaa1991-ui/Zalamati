@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Zalmati55",
+  "description": "A high-octane social feed for street culture and drift enthusiasts featuring voice-first interactions and gritty urban aesthetics.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

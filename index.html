@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Zalamati - Street Voice</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Permanent+Marker&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFFFFF", 
+                        "background-light": "#e4e4e7",
+                        "background-dark": "#121212",
+                        "accent-orange": "#FF5722",
+                        "zalamati-red": "#FF3B30",
+                    },
+                    fontFamily: {
+                        display: ["Cairo", "sans-serif"],
+                        graffiti: ["Permanent Marker", "cursive"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                    backgroundImage: {
+                        'asphalt-dark': "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')",
+                        'asphalt-light': "url('https://www.transparenttextures.com/patterns/asfalt-light.png')",
+                    },
+                    animation: {
+                        'spin-slow': 'spin 8s linear infinite',
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shake': 'shake 0.4s cubic-bezier(.36,.07,.19,.97) both',
+                        'draw-mask': 'draw 1.5s ease-in-out forwards',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .text-shadow-sm { text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
+        .text-glow { text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }
+        .fire-glow { filter: drop-shadow(0 0 8px rgba(255, 87, 34, 0.8)); }
+        
+        body {
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        @keyframes drift {
+          0% { transform: translateX(0) skewX(0deg); }
+          50% { transform: translateX(5px) skewX(2deg); }
+          100% { transform: translateX(0) skewX(0deg); }
+        }
+        .drift-animation { animation: drift 3s ease-in-out infinite; }
+
+        @keyframes shake {
+          10%, 90% { transform: translate3d(-1px, 0, 0); }
+          20%, 80% { transform: translate3d(2px, 0, 0); }
+          30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+          40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+
+        @keyframes draw {
+          0% { clip-path: inset(0 0 100% 0); }
+          100% { clip-path: inset(0 0 0 0); }
+        }
+
+        @keyframes pulse-ring {
+          0% { transform: scale(.33); }
+          80%, 100% { opacity: 0; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-black font-display antialiased">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
